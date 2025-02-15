@@ -1,0 +1,20 @@
+[Unit]
+Description=демон SSH Tunnel Daemon
+After=network.target
+
+[Service]
+ExecStart=/home/mirninec/tunnel/ssh_tunnel.sh
+Restart=always
+RestartSec=60
+User=user
+
+[Install]
+WantedBy=multi-user.target
+
+# sudo cp ./ssh-tunnel.service /etc/systemd/system/
+# sudo systemctl daemon-reload
+# sudo systemctl enable ssh-tunnel.service
+# sudo systemctl start ssh-tunnel.service
+# sudo systemctl status ssh-tunnel.service
+# sudo journalctl -u ssh-tunnel.service -f
+# sudo tail -f /var/log/ssh_tunnel.log
